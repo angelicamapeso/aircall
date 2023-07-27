@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./css/app.css";
+import "./styles/app.scss";
 
 import { CallProvider } from "./context/CallContext.js";
 import { LoadingProvider } from "./context/LoadingContext.js";
