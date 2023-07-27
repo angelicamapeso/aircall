@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass/mixins";
 
 footer {
   nav ul {
@@ -16,6 +17,10 @@ footer {
     img {
       height: 20px;
     }
+  }
+
+  li:first-child {
+    @include underline($light-blue, 300%);
   }
 
   .grid {

@@ -1,0 +1,13 @@
+@mixin underline($color, $y-offset) {
+  &::after {
+    position: absolute;
+    content: " ";
+    background-color: $color;
+    width: 10px;
+    height: 5px;
+    border-radius: 5px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, $y-offset);
+  }
+}
