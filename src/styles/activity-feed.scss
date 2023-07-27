@@ -1,5 +1,14 @@
 @import "../sass/variables";
 
 #activity-feed {
-  background-color: $blue;
+  background-color: $dark-blue;
+
+  .archive-section {
+    padding-bottom: 15px;
+    border-bottom: 2px solid $blue;
+
+    button {
+      width: 100%;
+    }
+  }
 }

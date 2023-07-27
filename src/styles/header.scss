@@ -23,7 +23,7 @@ header {
   nav {
     flex: 1 1 auto;
     padding: 1.2em;
-    background-color: $blue;
+    background-color: $dark-blue;
     border-radius: 20px 0 0 0;
     position: relative;
     font-size: 1.1em;
@@ -37,7 +37,7 @@ header {
       left: -40px;
       border-radius: 50%;
       background-color: $dark-gray;
-      box-shadow: 20px 20px $blue;
+      box-shadow: 20px 20px $dark-blue;
       z-index: -1000;
     }
   }

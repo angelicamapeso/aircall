@@ -1,0 +1,60 @@
+@import "../sass/variables";
+
+.call-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid $blue;
+
+  .call-icon {
+    flex-basis: 10%;
+    height: 25px;
+  }
+
+  .caller-info {
+    flex-grow: 1;
+    padding-left: 1em;
+    font-size: 1.1em;
+
+    .from-to {
+      font-weight: 600;
+    }
+
+    span {
+      display: block;
+    }
+
+    .via {
+      margin-top: 0.2em;
+      font-size: 0.9em;
+      color: $light-blue;
+    }
+
+    .pink {
+      color: $pink;
+    }
+
+    .yellow {
+      color: $yellow;
+    }
+  }
+
+  .date {
+    margin: 0 1em;
+    text-align: center;
+    font-size: 0.9em;
+
+    span {
+      display: block;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .more {
+    height: 25px;
+  }
+}

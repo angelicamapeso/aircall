@@ -16,12 +16,13 @@ export const CallProvider = ({ children }) => {
   const [archivedCalls, setArchivedCalls] = useState([]);
 
   const getAllCalls = async () => {
-    const result = await loadOnRequest(CallAPI.getAllCalls);
-    if (result) {
-      setUnarchivedCalls(result.filter((call) => !call.is_archived));
-      setArchivedCalls(result.filter((call) => call.is_archived));
+    if (!unarchivedCalls.length && !archivedCalls.length) {
+      const result = await loadOnRequest(CallAPI.getAllCalls);
+      if (result) {
+        setUnarchivedCalls(result.filter((call) => !call.is_archived));
+        setArchivedCalls(result.filter((call) => call.is_archived));
+      }
     }
-    console.log(result);
   };
 
   return (

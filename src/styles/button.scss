@@ -1,0 +1,31 @@
+@import "../sass/variables";
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.8em 1em;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  img {
+    margin-right: 1em;
+    height: 20px;
+  }
+}
+.btn-pink {
+  background-color: rgba(255, 227, 227, 0.2);
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 227, 227, 0.4);
+  }
+}

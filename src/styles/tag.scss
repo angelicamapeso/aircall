@@ -1,0 +1,18 @@
+@import "../sass/variables";
+
+.tag {
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.pink-tag {
+  color: $pink;
+  border-color: $pink;
+}
+
+.yellow-tag {
+  color: $yellow;
+  border-color: $yellow;
+}
