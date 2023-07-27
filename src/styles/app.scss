@@ -19,8 +19,13 @@
   background: $dark-gray;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(108, 40, 73, 0.9);
+
+  display: flex;
+  flex-direction: column;
 }
 
 #app .container-view {
   padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
 }
