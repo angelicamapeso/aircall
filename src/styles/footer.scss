@@ -1,0 +1,58 @@
+@import "../sass/variables";
+
+footer {
+  nav ul {
+    padding: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+      height: 20px;
+    }
+  }
+
+  .grid {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    border: 1px solid $light-blue;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: $dark-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 25px;
+    }
+  }
+
+  .circle {
+    position: relative;
+    border: 1px solid $blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: " ";
+      background-color: $light-blue;
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+    }
+  }
+}
