@@ -1,3 +1,6 @@
+@import "../sass/variables";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 html,
 body,
 h1,
@@ -12,9 +15,13 @@ li {
   font-size: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
-  background: #ffe3e3;
-  font-family: helvetica, arial, sans-serif;
+  background: $pink;
+  font-family: "Noto Sans", helvetica, arial, sans-serif;
   font-size: 13px;
   color: white;
   line-height: 1;
