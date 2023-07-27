@@ -1,0 +1,20 @@
+@import "../sass/variables";
+
+#archived {
+  background-color: $dark-gray;
+
+  .unarchive-section {
+    background-color: $dark-blue;
+    border-bottom: 2px solid $blue;
+    padding: 20px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  ul {
+    padding: 20px;
+    padding-top: 0;
+  }
+}
