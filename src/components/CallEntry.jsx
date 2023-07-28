@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "../styles/call-entry.scss";
 
 import CallIcon from "./CallIcon.jsx";
-import { dateRelativeToToday } from "../util/date.js";
-import { capitalize } from "../util/formatter.js";
+import { dateRelativeToToday } from "../util/dateTimeFormatter.js";
+import { capitalize } from "../util/textFormatter.js";
 
 import MoreIcon from "../icons/more.svg";
 

@@ -1,0 +1,95 @@
+@import "../sass/variables";
+
+#activity-detail {
+  .back-section {
+    background-color: $dark-blue;
+    padding: 20px;
+    border-top: 2px solid $blue;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: white;
+      text-decoration: none;
+
+      img {
+        height: 15px;
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .details {
+    padding: 20px;
+
+    .archive-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2em;
+
+      p {
+        margin: 0;
+      }
+
+      button {
+        margin-left: auto;
+      }
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.5em;
+      margin-bottom: 2em;
+
+      span {
+        display: block;
+      }
+
+      .via {
+        margin-top: 0.3em;
+        font-weight: 400;
+        font-size: 0.9em;
+        color: $light-blue;
+      }
+    }
+
+    .date {
+      color: $light-blue;
+      transform: translate(0, 50%);
+      display: inline-block;
+      padding-right: 1em;
+      background-color: $dark-gray;
+      margin: 0;
+    }
+
+    .call-time-type {
+      display: flex;
+      font-size: 1.1em;
+      padding-top: 1em;
+      border-top: 1px solid $light-blue;
+
+      .time {
+        margin-right: 1em;
+      }
+
+      .type-duration {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .duration {
+          margin-top: 0.5em;
+          color: $light-blue;
+        }
+      }
+
+      .call-icon {
+        flex-basis: 8%;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}

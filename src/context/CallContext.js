@@ -25,9 +25,19 @@ export const CallProvider = ({ children }) => {
     }
   };
 
+  const getCallById = async (callId) => {
+    if (!unarchivedCalls.length && !archivedCalls.length) {
+      const result = await loadOnRequest(() => CallAPI.getCallById(callId));
+      return result;
+    }
+
+    const calls = [...unarchivedCalls, ...archivedCalls];
+    return calls.find((call) => call.id === callId);
+  };
+
   return (
     <CallContext.Provider
-      value={{ unarchivedCalls, archivedCalls, getAllCalls }}
+      value={{ unarchivedCalls, archivedCalls, getAllCalls, getCallById }}
     >
       {children}
     </CallContext.Provider>

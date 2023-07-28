@@ -8,6 +8,21 @@ const DAYS_OF_WEEK = [
   "Saturday",
 ];
 
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const yearMonthDate = (callDate) => {
   return `${callDate.getFullYear()}-${callDate.getMonth()}-${callDate.getDate()}`;
 };
@@ -53,7 +68,49 @@ const formatTime = (hours, minutes) => {
     formattedHour -= 12;
   }
   let formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-  return `${formattedHour}:${formattedMinutes} ${amPM}`;
+  return `${formattedHour}:${formattedMinutes}${amPM}`;
+};
+
+export const getDuration = (duration) => {
+  if (duration === 0) {
+    return null;
+  }
+
+  let totalDuration = duration;
+
+  let durationText = "";
+  if (totalDuration > 3600) {
+    const hours = Math.floor(totalDuration / 3600);
+    durationText += `${hours} hour${hours > 1 ? "s" : ""}, `;
+    totalDuration -= hours * 3600;
+  }
+
+  if (totalDuration > 60) {
+    const minutes = Math.floor(totalDuration / 60);
+    durationText += `${minutes} minute${minutes > 1 ? "s" : ""}, `;
+    totalDuration -= minutes * 60;
+  }
+
+  if (totalDuration > 0) {
+    durationText += `${totalDuration} second${totalDuration > 1 ? "s" : ""}`;
+  }
+
+  return durationText;
+};
+
+export const getDate = (date) => {
+  const callDate = new Date(date);
+  const day = callDate.getDay();
+  const dateVal = callDate.getDate();
+  const month = callDate.getMonth();
+  const year = callDate.getFullYear();
+
+  return `${DAYS_OF_WEEK[day]}, ${MONTHS[month]} ${dateVal}, ${year}`;
+};
+
+export const getTime = (date) => {
+  const callDate = new Date(date);
+  return formatTime(callDate.getHours(), callDate.getMinutes());
 };
 
 export const dateRelativeToToday = (date) => {

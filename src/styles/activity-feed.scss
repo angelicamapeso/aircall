@@ -2,14 +2,19 @@
 
 #activity-feed {
   background-color: $dark-blue;
-  padding: 20px;
 
   .archive-section {
+    padding: 20px;
     padding-bottom: 15px;
     border-bottom: 2px solid $blue;
 
     button {
       width: 100%;
     }
+  }
+
+  ul {
+    padding: 20px;
+    padding-top: 0;
   }
 }
