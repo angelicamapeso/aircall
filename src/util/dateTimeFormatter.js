@@ -62,8 +62,8 @@ const isToday = (today, callDate) => {
 };
 
 const formatTime = (hours, minutes) => {
-  const amPM = hours >= 12 ? "PM" : "AM";
-  let formattedHour = hours + 1;
+  const amPM = hours > 12 ? "PM" : "AM";
+  let formattedHour = hours === 0 ? 12 : hours;
   if (formattedHour > 12) {
     formattedHour -= 12;
   }
