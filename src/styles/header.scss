@@ -9,18 +9,18 @@ header {
   border-bottom: 10px solid $dark-blue;
 
   #logo {
-    flex: 1 0 30%;
     padding: 1em;
 
     img {
       position: relative;
       left: 0;
       height: 100%;
+      width: 125px;
     }
   }
 
   nav {
-    flex: 1 1 auto;
+    flex-grow: 1;
     padding: 1.2em;
     background-color: $dark-blue;
     border-radius: 20px 0 0 0;
