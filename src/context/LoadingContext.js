@@ -17,15 +17,23 @@ export const LoadingProvider = ({ children }) => {
       result = await requestCallback();
     } catch (err) {
       console.error(err);
-      setError("Sorry! Looks like something went wrong. Try again later!");
+      setError(
+        "Sorry, looks like something went wrong. Please try again later!"
+      );
     }
 
     setIsLoading(false);
     return result;
   };
 
+  const clearError = () => {
+    setError("");
+  };
+
   return (
-    <LoadingContext.Provider value={{ isLoading, error, loadOnRequest }}>
+    <LoadingContext.Provider
+      value={{ isLoading, error, loadOnRequest, clearError }}
+    >
       {children}
     </LoadingContext.Provider>
   );

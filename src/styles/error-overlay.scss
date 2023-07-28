@@ -1,0 +1,31 @@
+@import "../sass/variables";
+
+.error-overlay {
+  position: absolute;
+  z-index: 1000;
+  padding: 10px;
+  animation: slide-in 0.5s ease-out 0s 1;
+
+  .close-error {
+    img {
+      margin: 0;
+      width: 12px;
+      align-self: flex-start;
+    }
+
+    p {
+      margin-right: 1em;
+      line-height: 1.1;
+    }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}

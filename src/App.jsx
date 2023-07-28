@@ -4,6 +4,7 @@ import "./styles/app.scss";
 
 import { CallProvider } from "./context/CallContext.js";
 import { LoadingProvider } from "./context/LoadingContext.js";
+import ErrorOverlay from "./components/ErrorOverlay.jsx";
 import Header from "./components/Header.jsx";
 import ActivityFeed from "./pages/ActivityFeed.jsx";
 import ActivityDetail from "./pages/ActivityDetail.jsx";
@@ -16,6 +17,7 @@ const App = () => {
       <LoadingProvider>
         <CallProvider>
           <div className="container">
+            <ErrorOverlay />
             <Header />
             <Routes>
               <Route path="/" element={<ActivityFeed />} />
