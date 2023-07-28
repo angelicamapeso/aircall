@@ -7,19 +7,17 @@ import ArchiveIcon from "../icons/archive.svg";
 import "../styles/activity-feed.scss";
 
 const ActivityFeed = () => {
-  const { unarchivedCalls, getAllCalls } = useContext(CallContext);
+  const { unarchivedCalls, getAllCalls, archiveAllCalls } =
+    useContext(CallContext);
 
   useEffect(() => {
     getAllCalls();
   }, []);
 
-  useEffect(() => {
-    console.log(unarchivedCalls);
-  }, [unarchivedCalls]);
   return (
     <div id="activity-feed" className="container-view">
       <div className="archive-section">
-        <button className="btn-pink">
+        <button className="btn-pink" onClick={() => archiveAllCalls()}>
           <img src={ArchiveIcon} />
           Archive all calls
         </button>

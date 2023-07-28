@@ -14,16 +14,12 @@ import "../styles/activity-detail.scss";
 const ActivityDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { getCallById } = useContext(CallContext);
+  const { getCallById, updateCallArchive } = useContext(CallContext);
   const [call, setCall] = useState(null);
 
   useEffect(() => {
     getCallById(id).then((call) => (call ? setCall(call) : null));
   }, []);
-
-  useEffect(() => {
-    console.log(call);
-  }, [call]);
 
   const TAG_MAP = {
     missed: "pink-tag",
@@ -42,7 +38,10 @@ const ActivityDetail = () => {
         <div className="details">
           <div className="archive-info">
             {call.is_archived ? <p className="tag pink-tag">Archived</p> : null}
-            <button className={call.is_archived ? "btn-blue" : "btn-pink"}>
+            <button
+              className={call.is_archived ? "btn-blue" : "btn-pink"}
+              onClick={() => updateCallArchive(id)}
+            >
               <img src={call.is_archived ? UnarchiveIcon : ArchiveIcon} />
               {call.is_archived ? "Unarchive Call" : "Archive Call"}
             </button>

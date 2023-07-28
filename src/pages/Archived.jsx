@@ -7,20 +7,16 @@ import UnarchiveIcon from "../icons/unarchive.svg";
 import "../styles/archived.scss";
 
 const Archived = () => {
-  const { archivedCalls, getAllCalls } = useContext(CallContext);
+  const { archivedCalls, getAllCalls, resetCalls } = useContext(CallContext);
 
   useEffect(() => {
     getAllCalls();
   }, []);
 
-  useEffect(() => {
-    console.log(archivedCalls);
-  }, [archivedCalls]);
-
   return (
     <div id="archived" className="container-view">
       <div className="unarchive-section">
-        <button className="btn-blue">
+        <button className="btn-blue" onClick={() => resetCalls()}>
           <img src={UnarchiveIcon} />
           Unarchive All Calls
         </button>

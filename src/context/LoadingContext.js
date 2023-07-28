@@ -18,7 +18,9 @@ export const LoadingProvider = ({ children }) => {
     } catch (err) {
       console.error(err);
       setError("Sorry! Looks like something went wrong. Try again later!");
+      return null;
     }
+
     setIsLoading(false);
     return result;
   };
