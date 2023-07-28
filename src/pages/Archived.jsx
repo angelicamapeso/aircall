@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { CallContext } from "../context/CallContext";
 import { LoadingContext } from "../context/LoadingContext";
+
 import Loading from "../components/Loading.jsx";
+import EmptyState from "../components/EmptyState.jsx";
 
 import CallEntry from "../components/CallEntry.jsx";
 import UnarchiveIcon from "../icons/unarchive.svg";
@@ -20,6 +22,8 @@ const Archived = () => {
     <div id="archived" className="container-view">
       {isLoading ? (
         <Loading />
+      ) : !archivedCalls.length ? (
+        <EmptyState message={"No Archived Calls"} />
       ) : (
         <div>
           <div className="unarchive-section">

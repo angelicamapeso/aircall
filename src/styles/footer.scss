@@ -2,6 +2,8 @@
 @import "../sass/mixins";
 
 footer {
+  border-top: 2px solid $blue;
+
   nav ul {
     padding: 1.2em;
     display: grid;

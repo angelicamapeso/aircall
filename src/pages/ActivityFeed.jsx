@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { CallContext } from "../context/CallContext";
 import { LoadingContext } from "../context/LoadingContext";
+
 import Loading from "../components/Loading.jsx";
+import EmptyState from "../components/EmptyState.jsx";
 
 import CallEntry from "../components/CallEntry.jsx";
 import ArchiveIcon from "../icons/archive.svg";
@@ -21,6 +23,8 @@ const ActivityFeed = () => {
     <div id="activity-feed" className="container-view">
       {isLoading ? (
         <Loading />
+      ) : !unarchivedCalls.length ? (
+        <EmptyState message={"No Calls"} />
       ) : (
         <div>
           <div className="archive-section">
