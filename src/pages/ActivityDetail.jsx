@@ -33,7 +33,7 @@ const ActivityDetail = () => {
   return (
     <div id="activity-detail" className="container-view">
       <div className="back-section">
-        <a href="" onClick={() => navigate(-1)}>
+        <a onClick={() => navigate(-1)}>
           <img src={BackIcon} />
           Back
         </a>
