@@ -1,8 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { CallContext } from "../context/CallContext";
+import { LoadingContext } from "../context/LoadingContext";
 import { getTime, getDuration, getDate } from "../util/dateTimeFormatter";
 import { getTypeText } from "../util/textFormatter";
+import Loading from "../components/Loading.jsx";
 
 import BackIcon from "../icons/back_chev.svg";
 import ArchiveIcon from "../icons/archive.svg";
@@ -15,6 +17,7 @@ const ActivityDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { getCallById, updateCallArchive } = useContext(CallContext);
+  const { isLoading } = useContext(LoadingContext);
   const [call, setCall] = useState(null);
 
   useEffect(() => {
@@ -34,7 +37,8 @@ const ActivityDetail = () => {
           Back
         </a>
       </div>
-      {call && (
+      {isLoading ? <Loading /> : null}
+      {!isLoading && call && (
         <div className="details">
           <div className="archive-info">
             {call.is_archived ? <p className="tag pink-tag">Archived</p> : null}
